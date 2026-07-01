@@ -1,58 +1,135 @@
 @charset "utf-8";
 
+:root {
+    --page-bg: #eef4fb;
+    --page-bg-top: #f8fbff;
+    --panel-bg: rgba(255, 255, 255, 0.94);
+    --panel-border: #dce6f1;
+    --ink: #202936;
+    --muted: #657386;
+    --soft-muted: #8a97a8;
+    --accent: #2f6fa6;
+    --accent-hover: #1f5a8d;
+    --accent-soft: #e8f1fa;
+    --shadow: 0 10px 28px rgba(57, 76, 101, 0.08);
+    --shadow-soft: 0 6px 18px rgba(57, 76, 101, 0.06);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    color: var(--ink);
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    padding-top: 5rem;
+    line-height: 1.6;
+    padding-top: 4.25rem;
+    background:
+        linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg) 58%, #edf3fa 100%);
+}
+
+main.container-lg {
+    margin-top: 0.2rem;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--ink);
     font-weight: 700;
 }
 
 a,
 a:visited {
-    color: #2d76c4;
+    color: var(--accent);
 }
 
 a:hover {
-    color: #1d5f9f;
+    color: var(--accent-hover);
 }
 
+.terminal-nav,
 .navbar {
-    background-color: rgba(255, 255, 255, 0.72) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201, 215, 231, 0.92);
+    background-color: rgba(248, 251, 255, 0.88) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 24px rgba(61, 82, 109, 0.07);
+}
+
+.navbar-brand {
+    color: var(--ink) !important;
+    font-family: "Source Code Pro", monospace;
+    font-size: 1rem;
+    letter-spacing: 0;
 }
 
 .navbar-toggler {
+    border-color: rgba(201, 215, 231, 0.95);
+    color: var(--muted);
     font-size: 1em;
-    padding: 0.5em;
+    padding: 0.48em 0.65em;
+}
+
+.navbar-nav .nav-link {
+    color: var(--muted) !important;
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.9rem;
+}
+
+.navbar-nav .active .nav-link,
+.navbar-nav .nav-link:hover {
+    color: var(--accent) !important;
 }
 
 .card,
 .rounded-xl {
-    border-radius: 0.8rem !important;
+    border-radius: 0.9rem !important;
+}
+
+.card,
+.rounded-xl.bg-white {
+    border: 1px solid var(--panel-border) !important;
+    background: var(--panel-bg) !important;
+    box-shadow: var(--shadow-soft) !important;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow) !important;
+}
+
+.border-gray,
+.border-bottom {
+    border-color: var(--panel-border) !important;
 }
 
 .profile-card {
-    top: 80px;
+    top: 74px;
 }
 
 .profile-photo {
-    border-radius: 0.45rem;
+    aspect-ratio: 1 / 1;
+    border: 4px solid #f7fbff;
+    border-radius: 50%;
+    box-shadow: 0 10px 28px rgba(61, 82, 109, 0.13);
+    object-fit: cover;
 }
 
 .text-profile-position,
 .text-profile-bio {
+    color: #2c3644;
     font-weight: 400;
 }
 
-.inline-logo {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
+.cn-name {
+    color: var(--muted);
+    font-size: 0.72em;
+    font-weight: 500;
+}
+
+.text-muted,
+.small.text-muted {
+    color: var(--muted) !important;
 }
 
 .no-break {
@@ -60,34 +137,50 @@ a:hover {
 }
 
 .email-text {
+    color: var(--accent);
     font-family: "Source Code Pro", monospace;
 }
 
 .publication-cover {
-    border-radius: 0.25rem;
-    object-fit: cover;
     aspect-ratio: 3 / 2;
+    border-radius: 0.45rem;
+    box-shadow: 0 8px 22px rgba(61, 82, 109, 0.12);
+    object-fit: cover;
 }
 
 .publication-item + .publication-item {
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--panel-border);
 }
 
 .abstract-links a {
+    display: inline-block;
     margin-right: 0.35rem;
 }
 
-.footer {
-    color: #6c757d;
+mark {
+    border-radius: 0.32rem;
+    background: var(--accent-soft);
+    color: #405b76;
+    padding: 0.08rem 0.28rem;
 }
 
-html {
-    scroll-behavior: smooth;
+.footer {
+    border-color: var(--panel-border) !important;
+    background: rgba(248, 251, 255, 0.88) !important;
+    color: var(--soft-muted);
 }
 
 @media (max-width: 767.98px) {
     body {
-        padding-top: 4.5rem;
+        padding-top: 4rem;
+    }
+
+    main.container-lg {
+        margin-top: 0.15rem;
+    }
+
+    .navbar-brand {
+        font-size: 0.92rem;
     }
 
     .profile-card {
@@ -97,7 +190,6 @@ html {
 
     .profile-photo {
         max-width: 58%;
-        border-radius: 50%;
     }
 
     .publication-cover {
