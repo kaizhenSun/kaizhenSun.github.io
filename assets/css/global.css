@@ -1,8 +1,9 @@
 @charset "utf-8";
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    padding-top: 5.0rem;
+    padding-top: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -10,84 +11,97 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 700;
 }
 
-.card {
-    border-radius: 0.8rem!important;
+a,
+a:visited {
+    color: #2d76c4;
 }
 
-.card-img-overlay {
-    border-radius: 0.8rem!important;
-}
-
-.rounded-xl {
-    border-radius: 0.8rem!important;
-}
-
-.rounded-xl-bottom {
-    border-bottom-right-radius: 0.8rem !important;
-    border-bottom-left-radius: 0.8rem !important;
-}
-
-.rounded-xl-top {
-    border-top-left-radius: 0.8rem !important;
-    border-top-right-radius: 0.8rem !important;
-}
-
-
-.text-profile-position {
-    font-weight: 400;
-}
-
-.text-profile-bio {
-    /* font-family: "Raleway"; */
-    font-weight: 400;
+a:hover {
+    color: #1d5f9f;
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.6) !important;
+    background-color: rgba(255, 255, 255, 0.72) !important;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
 
-.inline-badge {
-    height: 16px;
-    vertical-align: -10%;
-    margin-right: 2px;
-    line-break: unset;
+.navbar-toggler {
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+.card,
+.rounded-xl {
+    border-radius: 0.8rem !important;
+}
+
+.profile-card {
+    top: 80px;
+}
+
+.profile-photo {
+    border-radius: 0.45rem;
+}
+
+.text-profile-position,
+.text-profile-bio {
+    font-weight: 400;
+}
+
+.inline-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
 }
 
 .no-break {
     white-space: nowrap;
 }
 
-.cover-image {
-    width: 180px;
-    max-height: 120px;
-}
-
-.abstract-body {
-    min-height: 100px;
-}
-
-img.lazy {
-    background-image: url('images/loading.gif');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 50px 50px;
-    min-height: 80px;
-}
-
-div.lazy {
-    background-image: url('images/loading.gif');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 50px 50px;
-    min-height: 80px;
-}
-
-.badge-publication {
-    font-size: 100%;
-}
-
 .email-text {
-    font-family: Source Code Pro, monospace;
+    font-family: "Source Code Pro", monospace;
+}
+
+.publication-cover {
+    border-radius: 0.25rem;
+    object-fit: cover;
+    aspect-ratio: 3 / 2;
+}
+
+.publication-item + .publication-item {
+    border-top: 1px solid #e5e5e5;
+}
+
+.abstract-links a {
+    margin-right: 0.35rem;
+}
+
+.footer {
+    color: #6c757d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 767.98px) {
+    body {
+        padding-top: 4.5rem;
+    }
+
+    .profile-card {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .profile-photo {
+        max-width: 58%;
+        border-radius: 50%;
+    }
+
+    .publication-cover {
+        aspect-ratio: 16 / 9;
+        border-radius: 0.8rem 0.8rem 0 0;
+    }
 }
