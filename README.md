@@ -2,6 +2,8 @@
 
 A lightweight static personal academic homepage.
 
+[Kaizhen Sun's Homepage](https://kaizhensun.github.io/)
+
 ## Preview
 
 Open `index.html` directly in a browser, or serve the directory with any static file server:
